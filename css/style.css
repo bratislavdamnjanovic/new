@@ -19,9 +19,6 @@ html, body {
 .main_footer, .wrap:after {
     height: 100px; 
 }
-.main_footer {
-    background: orange;
-}
 a {
     text-decoration: none;
 }
@@ -43,7 +40,7 @@ PAGE: Log in
     margin: 20px auto;
 }
 .login_wrap, .signup_wrap {
-    padding-top: 60px;
+    padding-top: 40px;
 }
 .signup_wrap {
     opacity: 0;
