@@ -33,14 +33,16 @@ and open the template in the editor.
                     <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
                     <input class="form-control" type="password" placeholder="Lozinka">
                 </div>      
-                <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit">Sign in</button>
+                <button class="btn btn-lg btn-primary btn-block btn-success" type="submit" name="submit">Sign in</button>
+                <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit">Sign up</button>
             </div>
+        </div>
+<!--            <div class="container">
+                     <h1>Imate mnogo obaveza, stalno ste u žurbi? Zaboravljate? Mi imamo rešenje za vas! <span>Remind ME</span> je dizajniran da vam pomogne u sistematizaciji i realizaciji Vaših aktivnosti. </h1>
+                </div>-->
             <footer class="main_footer">
                 <p>Sva prava zadržana  2014 &copy RemidME</p>               
-            </footer>
-        </div>
-        
-        </div>
+            </footer>        
         <script src="js/jquery.js"></script>        
         <script src="js/bootstrap.js"></script>
         <script src="js/fontawesome.js"></script>

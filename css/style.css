@@ -31,3 +31,10 @@ PAGE: Log in
 .login .input-group:nth-child(2) {
     margin: 15px 0 30px 0;
 }
+.container {
+    max-width: 90%;    
+}
+.main_footer {
+    background-color: #428BCA;
+    width: 100%;
+}
