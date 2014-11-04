@@ -24,6 +24,11 @@ and open the template in the editor.
                 <div class="login"></div>
                 <div class="top_nav"></div>
             </header>
+            <form action="login.php" method="post">
+                <input type="text" name="username"/>
+                <input type="text" name="password"/>
+                <input type="submit" name="Yes"/>
+            </form>
             <div class="content_wrap"></div>
             <footer class="main_footer"></footer>
         </div>
