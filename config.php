@@ -14,5 +14,6 @@ define('REGISTER_SUCCEDED', 5);
 define('NOT_REGISTERED', 6);
 define('WRONG_PASSWORD', 8);
 
+
 include ('db.php');
 include ('Autoloader.php');

@@ -1,10 +1,11 @@
 <?php
-
 class User {
-    protected static $instance = null;
-
+    
+    
+   protected static $instance = null;
     public static function instance(){
-        if($instance==null){
+        
+        if(self::$instance==null){
             $instance = new User();
         }
         return $instance;
@@ -22,15 +23,27 @@ class User {
        
     
         $error = "";
-        if(isset($_POST['login'])){
-            if(empty($username) || empty($password)){
-                return EMPTY_USERNAME_PASSWORD;
+      
+            if(empty($username) || empty($password) || $username=="" || $password==""){
+                $error = "Empty username or password!";
+                header("location: index.php");
+                
+                
             } else {
-                $username = check($_POST[$username]);
-                $password = md5($_POST[$password]);
+                //$username = check($username)
+                $username = trim($username);
+                $username = htmlspecialchars($username);
+                $username = stripslashes($username);
+                $password = $password;
+                
+                $connection = Db::instance()->Db();
                 $query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+               
                 $result = $connection->query($query);
+        
+                
                 $num_row = mysqli_num_rows($result);
+                echo $num_row;
                 if($num_row==1){ //matched password 1
                     $row = mysqli_fetch_array($result);
                     $_SESSION['user']['email'] = $row['email'];
@@ -39,13 +52,13 @@ class User {
                     header("location: home.php");
                 }
                 else{
-                    echo "ERROR login"; //password didn't matched
+                    echo "Password incorrect"; //password didn't matched
                 }
                 
             }
 
         }           
-    }
+    
     
     public function addUser($username, $password, $email){
         $error = "";

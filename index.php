@@ -27,18 +27,19 @@ and open the template in the editor.
 
             <div class="content_wrap"></div>
             <footer class="main_footer"></footer>
-
-            <div class="login">
+            <form action="login.php" method="post" enctype="multipart/form-data">
+            <div class="login.php">
                 <div class="input-group margin-bottom-sm">
                     <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
-                    <input class="form-control" type="text" placeholder="Email adresa">
+                    <input class="form-control" type="text" placeholder="Email adresa" name="username">
                 </div>
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
-                    <input class="form-control" type="password" placeholder="Lozinka">
+                    <input class="form-control" type="password" placeholder="Lozinka" name="password">
                 </div>      
-                <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit">Sign in</button>
+                <button class="btn btn-lg btn-primary btn-block" type="submit" name="login">Sign in</button>
             </div>
+            </form>
             <footer class="main_footer">
                 <p>Sva prava zadržana  2014 &copy RemidME</p>               
             </footer>
