@@ -10,7 +10,7 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>Remind me</title>
+        <title>RemindME</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="css/normalize.css">
@@ -23,34 +23,31 @@ and open the template in the editor.
         <div class="wrap">            
             <header class="main_heder">               
                 <a href="home.php"><img class="logo" src="img/logo.png" alt="logo"></a>            
-            </header>
-
-            <div class="content_wrap"></div>
-            <footer class="main_footer"></footer>
-
+            </header>      
+            <form action="login.php" method="post" enctype="multipart/form-data">
             <div class="login">
                 <div class="input-group margin-bottom-sm">
                     <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
-                    <input class="form-control" type="text" placeholder="Email adresa">
+                    <input class="form-control" type="text" placeholder="Email address" name="email">
                 </div>
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
-                    <input class="form-control" type="password" placeholder="Lozinka">
+                    <input class="form-control" type="password" placeholder="Password" name="password">
                 </div>      
-                <button class="btn btn-lg btn-primary btn-block btn-success" type="submit" name="submit">Sign in</button>
-                <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit">Sign up</button>
-            </div>
+                <button class="btn btn-lg btn-primary btn-block" type="submit" name="login">Log in</button>
+                <button class="btn btn-lg btn-primary btn-block" type="submit" name="signup">Sign up</button>
+            </div>        
+            </form>
         </div>
-<!--            <div class="container">
-                     <h1>Imate mnogo obaveza, stalno ste u žurbi? Zaboravljate? Mi imamo rešenje za vas! <span>Remind ME</span> je dizajniran da vam pomogne u sistematizaciji i realizaciji Vaših aktivnosti. </h1>
-                </div>-->
             <footer class="main_footer">
-                <p>Sva prava zadržana  2014 &copy RemidME</p>               
+                <div class="icon_wrap">
+                    <a href="#" target="blank>" <i class="fa fa-facebook"></i>
+                    <i class="fa fa-twitter"></i>
+                </div>
+                <p>All rights reserved &copy 2014 RemidME</p>                
             </footer>        
         <script src="js/jquery.js"></script>        
         <script src="js/bootstrap.js"></script>
         <script src="js/fontawesome.js"></script>
-
-
     </body>
 </html>
