@@ -10,16 +10,22 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Remind me</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
+        <link rel="css/normalize.css" type="txt/css" href="css">
+        <link rel="css/style.css" type="txt/css" href="css">
+<!--        <link rel="stylesheet" href="http://basehold.it/24">-->
     </head>
     <body>
-        <div>TODO write content</div>
-        <form action="login.php" method="post">
-            <input type="text" name="username" />
-            <input type="password" name="password" />
-            <input type="submit" name="login" value="posalji" />
-        </form>
+        <div class="wrap">
+            <header class="main_heder">
+                <div class="logo_wrap"></div>
+                <div class="login"></div>
+                <div class="top_nav"></div>
+            </header>
+            <div class="content_wrap"></div>
+            <footer class="main_footer"></footer>
+        </div>
     </body>
 </html>
