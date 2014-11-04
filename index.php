@@ -24,6 +24,10 @@ and open the template in the editor.
             <header class="main_heder">               
                 <a href="home.php"><img class="logo" src="img/logo.png" alt="logo"></a>            
             </header>
+
+            <div class="content_wrap"></div>
+            <footer class="main_footer"></footer>
+
             <div class="login">
                 <div class="input-group margin-bottom-sm">
                     <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
