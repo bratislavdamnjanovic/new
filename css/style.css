@@ -10,7 +10,7 @@ html, body {
 }
 .wrap {
     min-height: 100%;  
-    margin-bottom: -100px; 
+    margin-bottom: -100px;
 }
 .wrap:after {
     content: "";
