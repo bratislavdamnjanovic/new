@@ -24,9 +24,13 @@ and open the template in the editor.
             <header class="main_heder">               
                 <a href="home.php"><img class="logo" src="img/logo.png" alt="logo"></a>
             </header>
+            <h1>neki text</h1>
              <div class="form-group">
     <input type="text" class="form-control" placeholder="Subject">
-  </div>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Comment">
+            </div>
             <div class="submit">
             <button class="btn btn-lg btn-primary btn-block" type="submit" name="login">Submit</button>
             </div>
