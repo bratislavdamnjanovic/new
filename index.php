@@ -1,7 +1,7 @@
 <?php
-    include('config.php');
+   include('config.php');
 ?>
-
+ 
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -10,7 +10,7 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>Remind me</title>
+        <title>RemindME</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="css/normalize.css">
@@ -21,35 +21,33 @@ and open the template in the editor.
     </head>
     <body>
         <div class="wrap">            
-            <header class="main_heder">               
+            <header class="main_heder">              
                 <a href="home.php"><img class="logo" src="img/logo.png" alt="logo"></a>            
-            </header>
-
-            <div class="content_wrap"></div>
-            <footer class="main_footer"></footer>
+            </header>      
             <form action="login.php" method="post" enctype="multipart/form-data">
-            <div class="login.php">
+            <div class="login">
                 <div class="input-group margin-bottom-sm">
                     <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
-                    <input class="form-control" type="text" placeholder="Email adresa" name="username">
+                    <input class="form-control" type="text" placeholder="Email address" name="email">
                 </div>
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
-                    <input class="form-control" type="password" placeholder="Lozinka" name="password">
+                    <input class="form-control" type="password" placeholder="Password" name="password">
                 </div>      
-                <button class="btn btn-lg btn-primary btn-block" type="submit" name="login">Sign in</button>
-            </div>
+                <button class="btn btn-lg btn-primary btn-block" type="submit" name="login">Log in</button>
+                <button class="btn btn-lg btn-primary btn-block" type="submit" name="signup">Sign up</button>
+            </div>        
             </form>
+        </div>
             <footer class="main_footer">
-                <p>Sva prava zadržana  2014 &copy RemidME</p>               
-            </footer>
-        </div>
-        
-        </div>
-        <script src="js/jquery.js"></script>        
-        <script src="js/bootstrap.js"></script>
-        <script src="js/fontawesome.js"></script>
-
-
-    </body>
+                <div class="icon_wrap">
+                    <i class="fa fa-facebook"></i>
+                    <i class="fa fa-twitter"></i>
+                </div>
+                <p>All rights reserved &copy 2014 RemidME</p>                
+           </footer>        
+       <script src="js/jquery.js"></script>        
+       <script src="js/bootstrap.js"></script>
+       <script src="js/fontawesome.js"></script>
+   </body>
 </html>

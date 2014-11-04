@@ -16,4 +16,5 @@ define('WRONG_PASSWORD', 8);
 
 
 include ('db.php');
+include ('helpers/print.php');
 include ('Autoloader.php');

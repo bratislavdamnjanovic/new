@@ -1,17 +1,11 @@
 <?php
     include ('config.php');
+ 
+    $login = User::instance()->login($_POST['email'], $_POST['password']);
     
-    print_r($_POST);
+    print_r($login);
     
-    $login = User::instance()->login($_POST['username'], $_POST['password']);
     
-    if ($login) {
-        header("location: home.php");
-        echo $_POST['username'];
-    } else {
-        header("location: index.php");
-        
-    }
 ?>
 
 
