@@ -38,11 +38,17 @@ PAGE: Log in
     max-width: 90%;
     margin: 20px auto;
 }
-.login .input-group:first-child {
+/*.login .input-group:first-child {
     margin-top: 70px;
 }
 .login .input-group:nth-child(2) {
     margin: 15px 0 30px 0;
+}*/
+.login {
+    padding-top: 60px;
+}
+.input-group {
+    padding: 10px 0;
 }
 .container {
     max-width: 90%;    
