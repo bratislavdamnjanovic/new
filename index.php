@@ -1,7 +1,7 @@
 <?php
-   include('config.php');
+include('config.php');
 ?>
- 
+
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -17,15 +17,32 @@ and open the template in the editor.
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/font-awesome.css">
-<!--        <link rel="stylesheet" href="http://basehold.it/24">-->
+        <!--        <link rel="stylesheet" href="http://basehold.it/24">-->
     </head>
     <body>
         <div class="wrap">            
-            <header class="main_heder">              
+            <header class="main_heder">               
                 <a href="home.php"><img class="logo" src="img/logo.png" alt="logo"></a>            
-            </header>      
-            <form action="login.php" method="post" enctype="multipart/form-data">
-            <div class="login">
+            </header>  
+            <div class="login_wrap">
+                <form action="login.php" method="post" enctype="multipart/form-data">
+                    <div class="input-group margin-bottom-sm">
+                        <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+                        <input class="form-control" type="text" placeholder="Email address" name="email">
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+                        <input class="form-control" type="password" placeholder="Password" name="password">
+                    </div>      
+                    <button class="btn btn-lg btn-primary btn-block" type="submit" name="login">Log in</button>
+                    <button class="btnsignup btn btn-lg btn-primary btn-block" type="submit" name="signup">Sign up</button>
+                </form> 
+            </div> 
+            <div class="signup_wrap">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
+                    <input class="form-control" type="password" placeholder="Username" name="username">
+                </div>   
                 <div class="input-group margin-bottom-sm">
                     <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
                     <input class="form-control" type="text" placeholder="Email address" name="email">
@@ -33,21 +50,25 @@ and open the template in the editor.
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
                     <input class="form-control" type="password" placeholder="Password" name="password">
-                </div>      
-                <button class="btn btn-lg btn-primary btn-block" type="submit" name="login">Log in</button>
+                </div>     
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+                    <input class="form-control" type="password" placeholder="Retype Password" name="repassword">
+                </div>                    
                 <button class="btn btn-lg btn-primary btn-block" type="submit" name="signup">Sign up</button>
+                <button class="btnback btn btn-lg btn-primary btn-danger" type="submit" name="back">Back</button>
             </div>        
-            </form>
         </div>
-            <footer class="main_footer">
-                <div class="icon_wrap">
-                    <i class="fa fa-facebook"></i>
-                    <i class="fa fa-twitter"></i>
-                </div>
-                <p>All rights reserved &copy 2014 RemidME</p>                
-           </footer>        
-       <script src="js/jquery.js"></script>        
-       <script src="js/bootstrap.js"></script>
-       <script src="js/fontawesome.js"></script>
-   </body>
+        <footer class="main_footer">
+            <div class="icon_wrap">
+                <i class="fa fa-facebook"></i>
+                <i class="fa fa-twitter"></i>
+            </div>
+            <p>All rights reserved &copy 2014 RemidME</p>                
+        </footer>        
+        <script src="js/jquery.js"></script>        
+        <script src="js/bootstrap.js"></script>
+        <script src="js/fontawesome.js"></script>
+        <script src="js/javascript.js"></script>
+    </body>
 </html>

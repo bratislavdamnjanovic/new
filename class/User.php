@@ -30,8 +30,8 @@ class User {
             $query = "SELECT * FROM users WHERE email='$email' AND password='$password'";
             $result = Db::instance()->DbQuery($query, $connection);
             $num_row = Db::instance()->NumRow($result);
-          
-            if ($num_row == 1) { 
+
+            if ($num_row == 1) {
                 $row = Db::instance()->fetchRow($result);
                 $_SESSION['user']['email'] = $row['email'];
                 $_SESSION['user']['username'] = $row['username'];
@@ -44,49 +44,49 @@ class User {
     }
 
     public function signup($username, $email, $password, $repassword) {
-      
-            if (empty($username)) {
-                return print_result(-2, null, "Username required.");
-                
-            } else if (empty($email)) {
-                return print_result(-2, null, "Email required.");
-            } else if (empty($password)) {
-                return print_result(-2, null, "Password required.");
-            } else if(empty($repassword)){
-                return print_result(-2, null, "RePassword required");
-            }
-            
-            else if($password!=$repassword) {
-                return print_result(-2, null, "Please retype passwords!");
-            }
-                else {
-               $connection = Db::instance()->Db("localhost", "root", "", "remindme");
-               $query = "SELECT * FROM users WHERE username='$username' AND password='$password' AND email='$email'";
-               $result = Db::instance()->DbQuery($query, $connection);
-               
+
+        if (empty($username)) {
+            return
+                    print_result(-2, null, "Username required.");
+        } else if (empty($email)) {
+            return
+                    print_result(-2, null, "Email required.");
+        } else if (empty($password)) {
+            return
+                    print_result(-2, null, "Password required.");
+        } else if (empty($repassword)) {
+            return
+                    print_result(-2, null, "RePassword required");
+        } else if ($password != $repassword) {
+            return
+                    print_result(-2, null, "Please retype passwords!");
+        } else {
+            $connection = Db::instance()->Db("localhost", "root", "", "remindme");
+            $query = "SELECT * FROM users WHERE username='$username' AND password='$password' AND email='$email'";
+            $result = Db::instance()->DbQuery($query, $connection);
+
+            $num_row = Db::instance()->NumRow($result);
+            if ($num_row > 0) {
+                return print_result(0, null, "User exists");
+            } else {
+                $query = "INSERT INTO users (username, password, email) VALUES ('$username', '$password', '$email')";
+                $result = Db::instance()->DbQuery($query, $connection);
                 $num_row = Db::instance()->NumRow($result);
-                if ($num_row > 0) {
-                    return print_result(0, null, "User exists");
-                } else {
-                    $query = "INSERT INTO users (username, password, email) VALUES ('$username', '$password', '$email')";
-                    $result = Db::instance()->DbQuery($query, $connection);
-                    $num_row = Db::instance()->NumRow($result);
-                    if ($num_row == 1){
-                        $row = Db::instance()->fetchRow($result);
-                        return 
+                if ($num_row == 1) {
+                    $row = Db::instance()->fetchRow($result);
+                    return
                             print_result(1, $row, $message);
-                    }
-                    else{
-                        return print_result(-1, null, "User has not logged in.");
-                    }
+                } else {
+                    return print_result(-1, null, "User has not logged in.");
                 }
             }
+        }
     }
 
     public function logOut() {
-       
-        if(session_destroy())
-            return print_result (-1, null, "User logged off.");
+
+        if (session_destroy())
+            return print_result(-1, null, "User logged off.");
     }
 
     function test_input($data) {
@@ -94,6 +94,6 @@ class User {
         $data = stripslashes($data);
         $data = htmlspecialchars($data);
         return $data;
-      }
+    }
 
 }

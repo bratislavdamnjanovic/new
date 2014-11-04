@@ -1,7 +1,7 @@
 /******************************
 GENERAL
 ******************************/
- 
+
 * {
     margin: 0;
 }
@@ -17,10 +17,14 @@ html, body {
     display: block;
 }
 .main_footer, .wrap:after {
+<<<<<<< HEAD
     height: 100px;
 }
 .main_footer {
     background: orange;
+=======
+    height: 100px; 
+>>>>>>> 14260dec07bfc4c3b171ee5016b6c5649c53cc8c
 }
 a {
     text-decoration: none;
@@ -32,21 +36,42 @@ a {
 /******************************
 PAGE: Log in
 ******************************/
+<<<<<<< HEAD
  
+=======
+.wrap {
+    max-width: 360px;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+>>>>>>> 14260dec07bfc4c3b171ee5016b6c5649c53cc8c
 .logo {
     display: block;
     max-width: 90%;
     margin: 20px auto;
 }
-.login .input-group:first-child {
-    margin-top: 70px;
+.login_wrap, .signup_wrap {
+    padding-top: 40px;
 }
+.signup_wrap {
+    opacity: 0;
+    display: none;
+}
+.input-group {
+    margin: 10px 0;
+}
+.btn {
+    margin: 20px 0;
+}
+<<<<<<< HEAD
 .login .input-group:nth-child(2) {
     margin: 15px 0 30px 0;
 }
 .container {
     max-width: 90%;    
 }
+=======
+>>>>>>> 14260dec07bfc4c3b171ee5016b6c5649c53cc8c
 .main_footer {
     background-color: #428BCA;
     width: 100%;
@@ -56,9 +81,20 @@ PAGE: Log in
 .main_footer i {
     font-size: 2.5em;
     margin: 10px 15px;
+<<<<<<< HEAD
  }  
+=======
+ }   
+>>>>>>> 14260dec07bfc4c3b171ee5016b6c5649c53cc8c
 .main_footer p {
     font-size: 0.9em;
     color: #fff;
     text-align: center;
+<<<<<<< HEAD
 }
+=======
+}
+/******************************
+PAGE: Feedback
+******************************/
+>>>>>>> 14260dec07bfc4c3b171ee5016b6c5649c53cc8c
