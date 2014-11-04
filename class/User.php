@@ -14,6 +14,10 @@ class User {
         
     }
     
+    public function isLogged() {
+        return (isset($_SESSION['user']) && isset($_SESSION['user']['logged'])) ? $_SESSION['user']['logged'] : false;
+    }
+    
     public function login($username, $password){
        
     
@@ -22,7 +26,7 @@ class User {
             if(empty($username) || empty($password)){
                 return EMPTY_USERNAME_PASSWORD;
             } else {
-                $username = $_POST[$username];
+                $username = check($_POST[$username]);
                 $password = md5($_POST[$password]);
                 $query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
                 $result = $connection->query($query);
@@ -31,10 +35,11 @@ class User {
                     $row = mysqli_fetch_array($result);
                     $_SESSION['user']['email'] = $row['email'];
                     $_SESSION['user']['username'] = $row['username'];
+                    $_SESSION['user']['logged'] = true;
                     header("location: home.php");
                 }
                 else{
-                    $error = 0; //password didn't matched
+                    echo "ERROR login"; //password didn't matched
                 }
                 
             }
@@ -56,6 +61,8 @@ class User {
                 return USER_EMPTY_EMAIL;
             } 
             else{
+                $username = check($username);
+                $email = check($password);
                 $queryCheck = "SELECT * FROM users WHERE username='$username' AND password='$password' AND email='$email'";
                 $result = $connection->query($queryCheck);
                 $num_row = mysqli_num_rows($result);
@@ -79,6 +86,20 @@ class User {
         }
     }
     
+    public function logOut(){
+        session_start();
+        if(session_destroy()){
+            header("location: index.php");
+        }
+    }
     
+    public function check($data){
+               $data = trim($data);
+               $data = stripslashes($data);
+               $data = htmlspecialchars($data);
+               return $data;
+               
+           }
+        
   
 }
