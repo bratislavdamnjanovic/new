@@ -1,3 +1,7 @@
+<?php
+include('config.php');
+?>
+
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -6,11 +10,30 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>RemindME</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/font-awesome.css">
+        <!--        <link rel="stylesheet" href="http://basehold.it/24">-->
     </head>
     <body>
-        <div>TODO write content</div>
+        <div class="wrap">            
+            
+                   
+        </div>
+        <footer class="main_footer">
+            <div class="icon_wrap">
+                <i class="fa fa-facebook"></i>
+                <i class="fa fa-twitter"></i>
+            </div>
+            <p>All rights reserved &copy 2014 RemidME</p>                
+        </footer>        
+        <script src="js/jquery.js"></script>        
+        <script src="js/bootstrap.js"></script>
+        <script src="js/fontawesome.js"></script>
+        <script src="js/javascript.js"></script>
     </body>
 </html>

@@ -39,24 +39,26 @@ and open the template in the editor.
                 </form> 
             </div> 
             <div class="signup_wrap">
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
-                    <input class="form-control" type="password" placeholder="Username" name="username">
-                </div>   
-                <div class="input-group margin-bottom-sm">
-                    <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
-                    <input class="form-control" type="text" placeholder="Email address" name="email">
-                </div>
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
-                    <input class="form-control" type="password" placeholder="Password" name="password">
-                </div>     
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
-                    <input class="form-control" type="password" placeholder="Retype Password" name="repassword">
-                </div>                    
-                <button class="btn btn-lg btn-primary btn-block" type="submit" name="signup">Sign up</button>
-                <button class="btnback btn btn-lg btn-primary btn-danger" type="submit" name="back">Back</button>
+                <form action="signin.php" method="post">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
+                        <input class="form-control" type="text" placeholder="Username" name="username">
+                    </div>   
+                    <div class="input-group margin-bottom-sm">
+                        <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+                        <input class="form-control" type="email" placeholder="Email address" name="email">
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+                        <input class="form-control" type="password" placeholder="Password" name="password">
+                    </div>     
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+                        <input class="form-control" type="password" placeholder="Retype Password" name="repassword">
+                    </div>                    
+                    <button class="btn btn-lg btn-primary btn-block" type="submit" name="signup">Sign up</button>
+                    <button class="btnback btn btn-lg btn-primary btn-danger" type="submit" name="back">Back</button>
+                </form>
             </div>        
         </div>
         <footer class="main_footer">
