@@ -56,7 +56,7 @@ and open the template in the editor.
                     <input class="form-control" type="password" placeholder="Retype Password" name="repassword">
                 </div>                    
                 <button class="btn btn-lg btn-primary btn-block" type="submit" name="signup">Sign up</button>
-                <button class="btn btn-lg btn-primary btn-danger" type="submit" name="back">Back</button>
+                <button class="btnback btn btn-lg btn-primary btn-danger" type="submit" name="back">Back</button>
             </div>        
         </div>
         <footer class="main_footer">
