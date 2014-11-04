@@ -1,5 +1,5 @@
 <?php
-    include('config.php');
+include('config.php');
 ?>
 
 <!DOCTYPE html>
@@ -17,27 +17,27 @@ and open the template in the editor.
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/font-awesome.css">
-<!--        <link rel="stylesheet" href="http://basehold.it/24">-->
+        <!--        <link rel="stylesheet" href="http://basehold.it/24">-->
     </head>
     <body>
         <div class="wrap">            
             <header class="main_heder">               
                 <a href="home.php"><img class="logo" src="img/logo.png" alt="logo"></a>            
-            </header>      
-            <form action="login.php" method="post" enctype="multipart/form-data">
+            </header>  
             <div class="login_wrap">
-                <div class="input-group margin-bottom-sm">
-                    <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
-                    <input class="form-control" type="text" placeholder="Email address" name="email">
-                </div>
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
-                    <input class="form-control" type="password" placeholder="Password" name="password">
-                </div>      
-                <button class="btn btn-lg btn-primary btn-block" type="submit" name="login">Log in</button>
-                <button class="btn btn-lg btn-primary btn-block" type="submit" name="signup">Sign up</button>
-            </div>        
-            </form>        
+                <form action="login.php" method="post" enctype="multipart/form-data">
+                    <div class="input-group margin-bottom-sm">
+                        <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+                        <input class="form-control" type="text" placeholder="Email address" name="email">
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+                        <input class="form-control" type="password" placeholder="Password" name="password">
+                    </div>      
+                    <button class="btn btn-lg btn-primary btn-block" type="submit" name="login">Log in</button>
+                    <button class="btnsignup btn btn-lg btn-primary btn-block" type="submit" name="signup">Sign up</button>
+                </form> 
+            </div> 
             <div class="signup_wrap">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
@@ -51,11 +51,12 @@ and open the template in the editor.
                     <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
                     <input class="form-control" type="password" placeholder="Password" name="password">
                 </div>     
-                 <div class="input-group">
+                <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
                     <input class="form-control" type="password" placeholder="Retype Password" name="repassword">
                 </div>                    
                 <button class="btn btn-lg btn-primary btn-block" type="submit" name="signup">Sign up</button>
+                <button class="btn btn-lg btn-primary btn-danger" type="submit" name="back">Back</button>
             </div>        
         </div>
         <footer class="main_footer">
@@ -68,5 +69,6 @@ and open the template in the editor.
         <script src="js/jquery.js"></script>        
         <script src="js/bootstrap.js"></script>
         <script src="js/fontawesome.js"></script>
+        <script src="js/javascript.js"></script>
     </body>
 </html>
