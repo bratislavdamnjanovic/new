@@ -1,3 +1,7 @@
+<?php
+    include('config.php');
+?>
+
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -12,5 +16,10 @@ and open the template in the editor.
     </head>
     <body>
         <div>TODO write content</div>
+        <form action="login.php" method="post">
+            <input type="text" name="username" />
+            <input type="password" name="password" />
+            <input type="submit" name="login" value="posalji" />
+        </form>
     </body>
 </html>
