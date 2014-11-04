@@ -41,7 +41,7 @@ and open the template in the editor.
         </div>
             <footer class="main_footer">
                 <div class="icon_wrap">
-                    <a href="#" target="blank>" <i class="fa fa-facebook"></i>
+                    <i class="fa fa-facebook"></i>
                     <i class="fa fa-twitter"></i>
                 </div>
                 <p>All rights reserved &copy 2014 RemidME</p>                
