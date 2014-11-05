@@ -19,7 +19,7 @@ class User {
     public function isLogged() {
         return (isset($_SESSION['user']) && isset($_SESSION['user']['logged'])) ? $_SESSION['user']['logged'] : false;
     }
-    
+
     public function userID() {
         if ($this->isLogged()) {
             return $_SESSION['user']['id'];
@@ -27,8 +27,8 @@ class User {
             return 0;
         }
     }
-    
-    public function userPassword(){
+
+    public function userPassword() {
         return $_SESSION['user']['password'];
     }
 
@@ -80,19 +80,16 @@ class User {
     public function change($email, $password, $repassword, $oldpassword) {
         if (empty($email) || empty($password) || empty($repassword) || empty($oldpassword)) {
             return print_result(-3, null, 'Empty fields');
-        } 
-        else if ($password != $repassword) {
+        } else if ($password != $repassword) {
             return print_result(-2, null, "Retype password.");
-        }  else if($oldpassword != $this->userPassword()){
+        } else if ($oldpassword != $this->userPassword()) {
             return print_result(-1, null, "Old password incorrect");
-        } 
-        
-        else {
+        } else {
             $connection = Db::instance()->Db();
             $id = $this->userID();
-           
-           
-            $query = 'UPDATE users SET email=\''.$email.'\', password=\''.$password.'\' WHERE  id ='.$id;
+
+
+            $query = 'UPDATE users SET email=\'' . $email . '\', password=\'' . $password . '\' WHERE  id =' . $id;
             $result = Db::instance()->DbQuery($query, $connection);
             echo $query;
             var_dump($result);
@@ -102,11 +99,11 @@ class User {
         }
     }
 
-//    public function logOut() {
-//
-//        if (session_destroy())
-//            return print_result(-1, null, "User logged off.");
-//    }
+    public function logOut() {
+
+        if (session_destroy())
+            return print_result(-1, null, "User logged off.");
+    }
 
     function test_input($data) {
         $data = trim($data);
