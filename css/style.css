@@ -30,8 +30,7 @@ a {
 PAGE: Log in
 ******************************/
 .wrap {
-    max-width: 90%;
-    padding: 0 10px;
+    padding: 15px 10px 0 10px;
     margin: 0 auto;   
 }
 .logo {
@@ -74,8 +73,15 @@ PAGE: Home
     font-size: 3em;
 }
 .home_logo {
-    width: 70%;
+    width: 210px;
     float: right;
+    margin: 0;
+}
+.smaras {
+    margin-top: 20px;
+}
+#my-menu ul:first-child{
+    margin-bot: 50px;
 }
 /*****************************
 PAGE: Feedback
@@ -90,4 +96,10 @@ PAGE: Support
     font-style: italic;
     color: #428BCA;
     margin: 20px auto;
+}
+/******************************
+PAGE: Settings
+******************************/
+.settings_wrap {
+    padding-top: 25px;
 }
