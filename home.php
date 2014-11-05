@@ -27,7 +27,7 @@ and open the template in the editor.
                 <a href="home.php"><img class="home_logo" src="img/logo.png" alt="logo"></a>            
             </header>  
             <a class="menu_open" href="#my-menu"><i class="smaras fa fa-navicon"></i></a>            
-            <nav id="my-menu">                     
+            <nav id="my-menu">
                 <ul>
                     <li><a href="home.php">Home</a></li>
                     <li><a href="aboutus.php">About us</a></li>

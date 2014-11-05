@@ -80,8 +80,8 @@ PAGE: Home
 .smaras {
     margin-top: 20px;
 }
-#my-menu ul:first-child{
-    margin-bot: 50px;
+#my-menu ul{
+    margin-top: 50px;
 }
 /*****************************
 PAGE: Feedback
