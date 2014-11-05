@@ -35,7 +35,7 @@ include('config.php');
             <div class="settings_wrap">
                 <form action="update.php" method="post">
                     <div class="input-group">
-                        <span class="bla input-group-addon"><i class="fa fa-user fa-fw"></i></span>
+                        <span class="bla input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
                         <input class="form-control" type="email" placeholder="New Email" name="newemail">
                     </div> 
                     <button class="btn btn-lg btn-primary btn-block" type="submit" name="changeemail">Change Email</button>
