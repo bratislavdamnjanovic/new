@@ -16,18 +16,22 @@ and open the template in the editor.
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/bootstrap.css">
-        <link rel="stylesheet" href="css/font-awesome.css">
+        <link rel="stylesheet" href="css/font-awesome.css">    
+        <link href="css/jquery.mmenu.all.css" type="text/css" rel="stylesheet" />
         <!--        <link rel="stylesheet" href="http://basehold.it/24">-->
     </head>
     <body>
-        <div class="home_wrap">            
-            <div class="canvas">
-                
-            </div>
-            <div class="hidden_menu">
-                <a href="#" class="toggle-nav">Toggle Nav</a>
-            </div>
-                   
+        <div class="wrap">             
+            <a class="menu_open" href="#my-menu"><i class="fa fa-navicon"></i></a>
+            <img class="home_logo" src="img/logo.png">
+            <nav id="my-menu">                
+                <ul>
+                    <li><a href="home.php">Home</a></li>
+                    <li><a href="aboutus.php">About us</a></li>
+                    <li><a href="suport.php">Support us</a></li>
+                    <li><a href="settings.php">Settings</a></li>
+                </ul>
+            </nav>
         </div>
         <footer class="main_footer">
             <div class="icon_wrap">
@@ -39,6 +43,7 @@ and open the template in the editor.
         <script src="js/jquery.js"></script>        
         <script src="js/bootstrap.js"></script>
         <script src="js/fontawesome.js"></script>
-        <script src="js/javascript.js"></script>
+        <script src="js/javascript.js"></script>  
+        <script src="js/jquery.mmenu.min.all.js" type="text/javascript"></script>
     </body>
 </html>

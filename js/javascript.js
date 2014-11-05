@@ -12,7 +12,7 @@ $(".btnsignup").click(function (e) {
         $('.signup_wrap').animate({
             opacity: 1,
         }, 500, function () {
-            
+
         });
     });
 
@@ -32,9 +32,24 @@ $(".btnback").click(function (e) {
         $('.login_wrap').animate({
             opacity: 1,
         }, 600, function () {
-            
+
         });
     });
 
 
+});
+$(document).ready(function () {
+    $("#my-menu").mmenu();
+});
+$(document).ready(function () {
+    $("#my-menu").mmenu();
+    $("#my-button").click(function () {
+        $("#my-menu").trigger("open.mm");
+    });
+});
+$(document).ready(function () {
+    $("#my-menu").mmenu();
+    $("#my-button").click(function () {
+        $("#my-menu").trigger("close.mm");
+    });
 });
