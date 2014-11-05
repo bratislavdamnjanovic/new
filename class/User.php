@@ -45,21 +45,10 @@ class User {
 
     public function signup($username, $email, $password, $repassword) {
 
-        if (empty($username)) {
-            return
-                    print_result(-2, null, "Username required.");
-        } else if (empty($email)) {
-            return
-                    print_result(-2, null, "Email required.");
-        } else if (empty($password)) {
-            return
-                    print_result(-2, null, "Password required.");
-        } else if (empty($repassword)) {
-            return
-                    print_result(-2, null, "RePassword required");
+        if (empty($username) || empty($password) || empty($email) || empty($repassword)) {
+            return print_result(-2, null, "You need do fill everything");
         } else if ($password != $repassword) {
-            return
-                    print_result(-2, null, "Please retype passwords!");
+            return print_result(-2, null, "Retype password");
         } else {
             $connection = Db::instance()->Db("localhost", "root", "", "remindme");
             $query = "SELECT * FROM users WHERE username='$username' AND password='$password' AND email='$email'";
@@ -71,14 +60,7 @@ class User {
             } else {
                 $query = "INSERT INTO users (username, password, email) VALUES ('$username', '$password', '$email')";
                 $result = Db::instance()->DbQuery($query, $connection);
-                $num_row = Db::instance()->NumRow($result);
-                if ($num_row == 1) {
-                    $row = Db::instance()->fetchRow($result);
-                    return
-                            print_result(1, $row, $message);
-                } else {
-                    return print_result(-1, null, "User has not logged in.");
-                }
+                echo "User added";
             }
         }
     }
