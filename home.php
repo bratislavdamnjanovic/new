@@ -20,8 +20,13 @@ and open the template in the editor.
         <!--        <link rel="stylesheet" href="http://basehold.it/24">-->
     </head>
     <body>
-        <div class="wrap">            
-            
+        <div class="home_wrap">            
+            <div class="canvas">
+                
+            </div>
+            <div class="hidden_menu">
+                <a href="#" class="toggle-nav">Toggle Nav</a>
+            </div>
                    
         </div>
         <footer class="main_footer">
