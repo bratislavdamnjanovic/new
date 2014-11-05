@@ -79,4 +79,15 @@ PAGE: Home
 }
 /*****************************
 PAGE: Feedback
+*******************************/
+
+  
+/******************************
+PAGE: Support
 ******************************/
+.wrap p {
+    font-size: 20px;
+    font-style: italic;
+    color: #428BCA;
+    margin: 20px auto;
+}
