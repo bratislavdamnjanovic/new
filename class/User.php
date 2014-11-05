@@ -77,19 +77,13 @@ class User {
         }
     }
 
-    public function change($email, $password, $repassword, $oldpassword) {
-        if (empty($email) || empty($password) || empty($repassword) || empty($oldpassword)) {
-            return print_result(-3, null, 'Empty fields');
-        } else if ($password != $repassword) {
-            return print_result(-2, null, "Retype password.");
-        } else if ($oldpassword != $this->userPassword()) {
-            return print_result(-1, null, "Old password incorrect");
+    public function changeMail($email) {
+        if (empty($email)) {
+            return print_result(-3, null, 'Empty email');
         } else {
             $connection = Db::instance()->Db();
             $id = $this->userID();
-
-
-            $query = 'UPDATE users SET email=\'' . $email . '\', password=\'' . $password . '\' WHERE  id =' . $id;
+            $query = 'UPDATE users SET email=\'' . $email  . '\' WHERE  id =' . $id;
             $result = Db::instance()->DbQuery($query, $connection);
             echo $query;
             var_dump($result);
@@ -98,7 +92,29 @@ class User {
             }
         }
     }
-
+    
+    public function changePassword($password, $repassword, $oldpassword){
+        if (empty($password) || empty($repassword) || empty($oldpassword)) {
+            return print_result(-3, null, "Empty password fields.");
+        } else if ($password != $repassword) {
+            return print_result(-2, null, "Retype password.");
+        }
+        if ($oldpassword != $this->userPassword()) {
+            return print_result(-1, null, "Old password incorrect");
+        } else {
+            $connection = Db::instance()->Db();
+            $id = $this->userID();
+            $query = 'UPDATE users SET password=\'' . $password . '\' WHERE  id =' . $id;
+            $result = Db::instance()->DbQuery($query, $connection);
+            echo $query;
+            var_dump($result);
+            if ($result) {
+                return print_result(1, null, "Changed");
+            }
+        }
+    }
+    
+    
     public function logOut() {
 
         if (session_destroy())
