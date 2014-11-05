@@ -53,7 +53,6 @@ class User {
             $connection = Db::instance()->Db("localhost", "root", "", "remindme");
             $query = "SELECT * FROM users WHERE username='$username' AND password='$password' AND email='$email'";
             $result = Db::instance()->DbQuery($query, $connection);
-
             $num_row = Db::instance()->NumRow($result);
             if ($num_row > 0) {
                 return print_result(0, null, "User exists");

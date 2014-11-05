@@ -21,7 +21,7 @@ and open the template in the editor.
     </head>
     <body>
         <div class="wrap"> 
-        <p>If you like our work and you want us to do a good job, please support us because WE DON'T HAVE MONEY!!!</p>
+            <p>If you like our work and you want us to do a good job, please support us because WE DON'T HAVE MONEY!!!<br>Bank account:123456</p>
         </div>
            <footer class="main_footer">
                 <div class="icon_wrap">
