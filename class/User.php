@@ -19,6 +19,18 @@ class User {
     public function isLogged() {
         return (isset($_SESSION['user']) && isset($_SESSION['user']['logged'])) ? $_SESSION['user']['logged'] : false;
     }
+    
+    public function userID() {
+        if ($this->isLogged()) {
+            return $_SESSION['user']['id'];
+        } else {
+            return 0;
+        }
+    }
+    
+    public function userPassword(){
+        return $_SESSION['user']['password'];
+    }
 
     public function login($email, $password) {
 
@@ -26,15 +38,15 @@ class User {
             return print_result(-3, null, 'Email and password required');
         } else {
             $email = self::test_input($email);
-            $connection = Db::instance()->Db("localhost", "root", "", "remindme");
+            $connection = Db::instance()->Db();
             $query = "SELECT * FROM users WHERE email='$email' AND password='$password'";
             $result = Db::instance()->DbQuery($query, $connection);
             $num_row = Db::instance()->NumRow($result);
 
             if ($num_row == 1) {
                 $row = Db::instance()->fetchRow($result);
-                $_SESSION['user']['email'] = $row['email'];
-                $_SESSION['user']['username'] = $row['username'];
+                print_r($row);
+                $_SESSION['user'] = $row;
                 $_SESSION['user']['logged'] = true;
                 return print_result(1, $row, 'User successfully logged in');
             } else {
@@ -50,8 +62,8 @@ class User {
         } else if ($password != $repassword) {
             return print_result(-2, null, "Retype password");
         } else {
-            $connection = Db::instance()->Db("localhost", "root", "", "remindme");
-            $query = "SELECT * FROM users WHERE username='$username' AND password='$password' AND email='$email'";
+            $connection = Db::instance()->Db();
+            $query = "SELECT * FROM users WHERE username='$username' OR password='$password' OR email='$email'";
             $result = Db::instance()->DbQuery($query, $connection);
             $num_row = Db::instance()->NumRow($result);
             if ($num_row > 0) {
@@ -59,16 +71,42 @@ class User {
             } else {
                 $query = "INSERT INTO users (username, password, email) VALUES ('$username', '$password', '$email')";
                 $result = Db::instance()->DbQuery($query, $connection);
-                echo "User added";
+
+                return print_result(1, null, "User added.");
             }
         }
     }
 
-    public function logOut() {
-
-        if (session_destroy())
-            return print_result(-1, null, "User logged off.");
+    public function change($email, $password, $repassword, $oldpassword) {
+        if (empty($email) || empty($password) || empty($repassword) || empty($oldpassword)) {
+            return print_result(-3, null, 'Empty fields');
+        } 
+        else if ($password != $repassword) {
+            return print_result(-2, null, "Retype password.");
+        }  else if($oldpassword != $this->userPassword()){
+            return print_result(-1, null, "Old password incorrect");
+        } 
+        
+        else {
+            $connection = Db::instance()->Db();
+            $id = $this->userID();
+           
+           
+            $query = 'UPDATE users SET email=\''.$email.'\', password=\''.$password.'\' WHERE  id ='.$id;
+            $result = Db::instance()->DbQuery($query, $connection);
+            echo $query;
+            var_dump($result);
+            if ($result) {
+                return print_result(1, null, "Changed");
+            }
+        }
     }
+
+//    public function logOut() {
+//
+//        if (session_destroy())
+//            return print_result(-1, null, "User logged off.");
+//    }
 
     function test_input($data) {
         $data = trim($data);

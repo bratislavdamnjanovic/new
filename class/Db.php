@@ -2,7 +2,7 @@
 
 class Db {
     protected static $instance=null;
-    private $connection = "";
+    private $_connection = null;
     
     public static function instance(){
         static $instance = null;
@@ -13,19 +13,23 @@ class Db {
     }
     
     private function __construct() {
-        
-    }
-    
-    public function Db($localhost, $username, $password, $database){
-        $connection = new mysqli($localhost, $username, $password, $database);
-        if(!$connection){
+        $this->_connection = new mysqli("localhost", "root", "", "remindme");
+        if(!$this->_connection){
             die("Connection failed: ".mysqli_connect_error());
         } 
-        return $connection;
     }
     
-    public function DbQuery($query, $connection){
-        $result = $connection->query($query);
+    public function Db(){
+        $this->_connection = new mysqli("localhost", "root", "", "remindme");
+        if(!$this->_connection){
+            die("Connection failed: ".mysqli_connect_error());
+        } 
+        return $this->_connection;
+    }
+    
+    public function DbQuery($query){
+        $result = $this->_connection->query($query);
+        var_dump(mysqli_error($this->_connection));
         return $result;
     }
     
