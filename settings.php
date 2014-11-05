@@ -17,24 +17,25 @@ include('config.php');
         <!--        <link rel="stylesheet" href="http://basehold.it/24">-->
     </head>
     <body>
-        <div class="wrap">            
+        <div class="wrap clearfix">            
             <header class="main_heder">               
                 <a href="home.php"><img class="home_logo" src="img/logo.png" alt="logo"></a>            
             </header>  
-            <a class="menu_open" href="#my-menu"><i class="fa fa-navicon"></i></a>            
+            <a class="menu_open" href="#my-menu"><i class="smaras fa fa-navicon"></i></a>            
             <nav id="my-menu">                
                 <ul>
                     <li><a href="home.php">Home</a></li>
                     <li><a href="aboutus.php">About us</a></li>
-                    <li><a href="suport.php">Support us</a></li>
+                    <li><a href="support.php">Support us</a></li>
                     <li><a href="settings.php">Settings</a></li>
+                    <li><a href="feedback.php">Send us feedback</a></li>
                 </ul>
             </nav>
 
             <div class="settings_wrap">
                 <form action="update.php" method="post">
                     <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
+                        <span class="bla input-group-addon"><i class="fa fa-user fa-fw"></i></span>
                         <input class="form-control" type="email" placeholder="New Email" name="newemail">
                     </div> 
                     <button class="btn btn-lg btn-primary btn-block" type="submit" name="changeemail">Change Email</button>
