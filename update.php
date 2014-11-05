@@ -1,6 +1,9 @@
 <?php
     include ('config.php');
     
-       $update = User::instance()->change($_POST['newemail'], $_POST['newpassword'], $_POST['newrepassword'], $_POST['oldpassword']);
-       
-    print_r($update);
+       $updateEmail = User::instance()->changeMail($_POST['newemail']);
+       $updatePassword = User::instance()->changePassword($_POST['newpassword'], $_POST['newrepassword'], $_POST['oldpassword']);
+      
+    print_r($updateEmail);
+    echo "<br>";
+    print_r($updatePassword);

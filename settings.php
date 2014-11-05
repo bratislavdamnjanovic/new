@@ -38,7 +38,7 @@ include('config.php');
                         <span class="bla input-group-addon"><i class="fa fa-user fa-fw"></i></span>
                         <input class="form-control" type="email" placeholder="New Email" name="newemail">
                     </div> 
-                    <button class="btn btn-lg btn-primary btn-block" type="submit" name="change">Change Email</button>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit" name="changeemail">Change Email</button>
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
                         <input class="form-control" type="password" placeholder="New Password" name="newpassword">
@@ -51,7 +51,7 @@ include('config.php');
                         <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
                         <input class="form-control" type="password" placeholder="Old Password" name="oldpassword">
                     </div> 
-                    <button class="btn btn-lg btn-primary btn-block" type="submit" name="change">Change Password</button>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit" name="changepassword">Change Password</button>
                 </form>
             </div>        
         </div>
